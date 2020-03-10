@@ -1,84 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Online Registration Form</title>
-    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
-    <!-- font-family: 'Merriweather', serif; -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Online Registration Form</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    <h1>The Code Review</h1>
+  <h1>The Code Review</h1>
 
-    <section>
-        <h2>Signup for our newsletter</h2>
-        <p>Get the latest news on how your code is doing right in your inbox</p>
-    </section>
+  <section>
+    <h2>Signup for our newsletter</h2>
+    <p>Get the latest news on how your code is doing right in your inbox</p>
+  </section>
 
-    <form>
-        <fieldset class="fieldset">
-            <legend>Contact Information</legend>
-            <label for="fname">Full name</label><br>
-            <input type="text" id="fname" name="fname"><br><br>
+  <form>
+    <fieldset class="fieldset-1 contact-info">
+      <legend class="main-legend">Contact Information</legend>
+      <label for="fname">Full name</label><br>
+      <input type="text" placeholder="Required" id="fname" name="fname"><br><br>
 
-            <label for="email">Email Address</label><br>
-            <input type="email" id="email" name="email"><br><br>
+      <label for="email">Email Address</label><br>
+      <input type="email" placeholder="Required" id="email" name="email"><br><br>
 
-            <label for="phone">Phone Number</label><br>
-            <input type="tel" id="phone" name="phone"><br><br>
+      <label for="phone">Phone Number</label><br>
+      <input type="tel" id="phone" name="phone"><br><br>
 
-            <label for="address">Street Address</label><br>
-            <input type="text" id="address" name="address"><br><br>
+      <label for="address">Street Address</label><br>
+      <input type="text" id="address" name="address"><br><br>
 
-            <label for="city">City</label><br>
-            <input type="text" id="city" name="city"><br><br>
+      <label for="city">City</label><br>
+      <input type="text" id="city" name="city"><br><br>
 
-            <label for="state">State</label><br>
-            <select id="state" name="state">
-                <option value="Alaska">Alaska</option>
-                <option value="Arizona">Arizona</option>
-                <option value="California">California</option>
-                <option value="Connecticut">Connecticut</option>
-            </select><br><br>
+      <label for="state">State</label><br>
+      <select id="state" name="state">
+        <option disabled selected value class="choose-state"> Choose State </option>
+        <option value="Alaska">Alaska</option>
+        <option value="Arizona">Arizona</option>
+        <option value="California">California</option>
+        <option value="Connecticut">Connecticut</option>
+      </select><br><br>
 
-            <label for="zip-code">Zip Code</label><br>
-            <input type="text" id="zip-code" name="zip-code"><br><br>
-        </fieldset>
+      <label for="zip-code">Zip Code</label><br>
+      <input type="text" id="zip-code" name="zip-code" class="zip-code">
+      <br>
+      <br>
+    </fieldset>
 
-        <fieldset class="fieldset">
-            <legend>Newsletter</legend>
+    <fieldset class="fieldset-2">
+      <legend class="main-legend">Newsletter</legend>
+      <fieldset class="fieldset-2a">
+        <legend>Select the newsletters you would like to recieve</legend>
 
-            <label for="newsletter-option">Select the newsletters you would like to recieve</label><br>
-        
-                <label for="html-news">HTML News</label>
-                <input type="checkbox" id="html-news" name="newsletter-option" checked="checked"><br>
-                
-                <label for="css-news">CSS News</label>
-                <input type="checkbox" id="css-news" name="newsletter-option"><br>
-                
-                <label for="javascript-news">Javascript News</label>
-                <input type="checkbox" id="javascript-news" name="newsletter-option"><br><br>
+        <input type="checkbox" id="html-news" name="newsletter-option" checked="checked">
+        <label for="html-news">HTML News</label>
+        <br>
 
-           <label for="format-option">Newsletter format</label><br/>
-                <label for="html-format">HTML</label>
-                <input type="radio" name="format-option" id="html-format" value="HTML" checked="checked"/><br/>
+        <input type="checkbox" id="css-news" name="newsletter-option">
+        <label for="css-news">CSS News</label>
+        <br>
 
-                <label for="plain-format">Plain text</label>
-                <input type="radio" name="format-option" id="plain-format" value="HTML"/><br/>
-                
-                <label for="other-topics">Other topics you'd like to hear about</label><br/>
-                <textarea id="other-topics">
-                </textarea>            
-       
+        <input type="checkbox" id="javascript-news" name="newsletter-option">
+        <label for="javascript-news">Javascript News</label>
+        <br>
+        <br>
+      </fieldset>
 
-        </fieldset class="fieldset">
+      <fieldset class="fieldset-2b">
+        <legend>Newsletter format</legend>
 
-        <button type="submit">Sign Up</button>
-    </form>
+        <div class="news-format">
+          <input type="radio" name="format-option" id="html-format" value="HTML" checked="checked" />
+          <label for="html-format">HTML</label>
+          <br>
 
-    <p>Copyright the Code Review</p>
+          <input type="radio" name="format-option" id="plain-format" value="plain-text" />
+          <label for="plain-format">Plain text</label>
+          <br>
+          <br>
+        </div>
+
+        <label for="other-topics" class="other-topics-label">Other topics you'd like to hear about</label>
+        <textarea id="other-topics"></textarea>
+      </fieldset>
+    </fieldset>
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <p>Copyright the Code Review</p>
 
 </body>
+
 </html>
