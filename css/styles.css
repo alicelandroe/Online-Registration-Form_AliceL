@@ -1,9 +1,8 @@
 /* Base styles */ 
 
-h1,
-h2,
-section p {
-    display: flex;
+fieldset {
+    margin: 0;
+    padding: 0;
 }
 
  body {
@@ -13,7 +12,7 @@ section p {
  }
 
 h1 {
-    justify-content: center;
+    text-align: center;
     background-color: #2b2b35;
     color: white;
     margin: 0;
@@ -21,7 +20,7 @@ h1 {
 }
 
 h2 {
-    justify-content: center;
+    text-align: center;
     padding-top: 10px;
     padding-bottom: 0;
     margin-bottom: 7px;
@@ -29,9 +28,9 @@ h2 {
 }
 
 section {
-    margin: 0 15px 3px 15px;
     padding-bottom: 15px;
     border-bottom: solid  #2b2b35 3px;
+    margin-bottom: 4px;
 }
 
 section p {
@@ -66,11 +65,16 @@ button {
     text-align: center;
     border-radius: 5px;
     border: 1px solid #48BBB6;
-    margin: 0 auto;
+    margin-bottom: 20px;
     display: block;
   }
 
 /* class styles */
+
+.page {
+    width: 90%;
+    margin: 0 auto 150px;
+}
 
 .contact-info input,
 .contact-info select {
@@ -83,30 +87,10 @@ button {
     margin-top: 7px;
 }
 
-.fieldset-1,
-.fieldset-2,
+.outer-fieldset,
 .fieldset-2a,
 .fieldset-2b {
     border: none;
-}
-
-.fieldset-1 {
-    margin: 0;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.fieldset-2 {
-    margin: 0;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.fieldset-2a,
-.fieldset-2b {
-    margin: 0;
-    padding-left: 5px;
-    padding-right: 5px;
 }
 
 .fieldset-2a legend,
@@ -115,6 +99,8 @@ button {
     color: #878787;
     font-size: 1.17em;
     line-height: 20px;
+    margin-left: 4px;
+    margin-bottom: 6px;
 }
 
 .news-format label,
@@ -125,11 +111,13 @@ button {
 .news-format input,
 .fieldset-2a input {
     margin-top: 8px;
+    margin-left: 6px;
 }
 
 
-.other-topics {
+.other-topics-div {
     padding-top: 15px;
+    padding-bottom: 30px;
 }
 
 .fieldset-2b textarea {
@@ -140,19 +128,38 @@ button {
     font-size: 15px;
     border-radius: 5px;
     margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.required-field::placeholder {
+    color: #bbbbbb;
+    font-style: italic;
+    font-size: 0.8em;
+    text-align: right;
+    padding-right: 18px;
 }
 
 ::placeholder {
     color: #bbbbbb;
     font-style: italic;
-    font-size: 0.7em;
-    text-align: right;
-    padding-right: 18px;
+    font-size: 0.8em;
+    text-align: left;
+    padding-left: 18px;
 }
 
-.choose-state {
-    color: #878787;
-    font-size: 0.7em;
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline-color: rgb(17, 20, 54);
+  }
+
+input,
+select,
+textarea {
+    outline-color: transparent;
+    transition: outline 0.3s;
 }
 
 .copyright {
@@ -168,34 +175,68 @@ button {
     width: 50%;
 }
 
+/* screen size for 768px and wider */
+
 @media (min-width: 768px) {
 
-    section,
-    form {
+    body {
+        background-color: #F8F8F8;;
+    }
+
+    .page {
         width: 70%;
-        margin: 3px auto;
+        background-color: white;
+        padding: 0 50px 40px;
+        margin-top: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 9px #cecdcd;
     }
 
     section {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
+        text-align: center;
         padding-top: 30px;
         padding-bottom: 30px;
+        margin: 5px auto;
     }
 
-    .fieldset-1 {
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    .main-legend {
+        padding-top: 35px;
+    }
+
+    .outer-fieldset {
         padding: 0;
     }
 
-    .fieldset-1 label {
-        display: inline-block;
-        width: 30%;
+    .contact-info label {      
+        width: 25%;
     }
 
-    .fieldset-1 input {
-        display: inline-block;
-    
-        width: 70%;
+    .contact-info input,
+    .contact-info select {
+        width: 75%;
     }
+
+    .contact-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .contact-info:not(:last-child) {
+        padding-bottom: 15px;
+    }
+
+    #zip-code {
+        width: 25%;
+        margin-bottom: 30px;
+    }
+   
+    .copyright {
+        margin-top: 40px;
+    }
+
+
 }
